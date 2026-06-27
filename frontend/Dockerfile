@@ -41,5 +41,8 @@ USER nextjs
 EXPOSE 3000
 
 # Railway cấp PORT động; server.js (standalone) đọc biến PORT.
+# HOSTNAME=0.0.0.0 để server lắng nghe mọi interface (nếu chỉ localhost,
+# Railway healthcheck từ bên ngoài sẽ không kết nối được).
 ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
 CMD ["node", "server.js"]

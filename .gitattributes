@@ -1,0 +1,14 @@
+# Chuẩn hoá xuống dòng để tránh lỗi khi build trên Linux (Railway).
+# Mặc định: tự nhận diện text và chuẩn hoá về LF trong repo.
+* text=auto eol=lf
+
+# Shell script BẮT BUỘC dùng LF (CRLF sẽ gây lỗi "bad interpreter" trên Linux).
+*.sh text eol=lf
+
+# Các file nhị phân: giữ nguyên, không đụng tới.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.bin binary
+chroma.sqlite3 binary
+*.sqlite3 binary
