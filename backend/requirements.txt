@@ -1,0 +1,28 @@
+# Dùng ràng buộc tối thiểu (>=) để pip lấy được wheel dựng sẵn,
+# tương thích nhiều phiên bản Python (bao gồm 3.13).
+
+# --- Web framework & server ---
+fastapi>=0.115.6
+uvicorn[standard]>=0.34.0
+pydantic>=2.10.4
+python-dotenv>=1.0.1
+
+# --- Rate limiting ---
+slowapi>=0.1.9
+
+# --- LangChain core & hệ sinh thái Google Gemini ---
+langchain>=0.3.27
+langchain-core>=0.3.70
+langchain-community>=0.3.27
+langchain-text-splitters>=0.3.8
+langchain-google-genai>=2.1.0
+langchain-chroma>=0.2.4
+
+# --- Vector store ---
+chromadb>=1.0.0
+
+# --- Xử lý PDF ---
+pymupdf>=1.25.1
+
+# --- Numeric (cần wheel cp313) ---
+numpy>=2.1.0

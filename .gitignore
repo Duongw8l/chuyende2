@@ -1,0 +1,38 @@
+# ===== Python / Backend =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# LƯU Ý: chroma_db và su_11_cleaned.txt ĐƯỢC commit để Railway chạy ngay
+# (container không phải OCR/embed lại lúc khởi động). Nếu muốn build lại từ
+# PDF thì xoá chúng và chạy clean_data.py + embed_data.py.
+
+# Cache OCR từng trang (resumable) - không cần lên repo
+backend/.ocr_cache/
+
+# File PDF nguồn (dung lượng lớn, không commit)
+backend/data/*.pdf
+
+# ===== Node / Frontend =====
+node_modules/
+.next/
+out/
+build/
+.npm/
+
+# ===== Môi trường & bí mật =====
+.env
+.env.local
+.env.*.local
+
+# ===== Hệ điều hành / IDE =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===== Claude Code (config cục bộ, có thể chứa secret) =====
+.claude/

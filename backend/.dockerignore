@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+.venv
+venv
+.env
+.ocr_cache
+.git
+README.md
