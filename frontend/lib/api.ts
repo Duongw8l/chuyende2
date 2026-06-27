@@ -1,11 +1,16 @@
 /**
  * Lớp giao tiếp với backend API.
- * URL backend được đọc từ biến môi trường NEXT_PUBLIC_API_URL (build-time).
+ * URL backend ưu tiên đọc từ NEXT_PUBLIC_API_URL (build-time).
+ * Nếu không có, fallback về backend production trên Railway để bản deploy
+ * luôn chạy được kể cả khi biến build chưa được truyền vào.
+ * Khi chạy local, đặt NEXT_PUBLIC_API_URL=http://localhost:8000 trong .env.local.
  */
 
-// Mặc định trỏ tới backend local khi chưa cấu hình biến môi trường.
+// URL backend production (đổi nếu bạn deploy domain khác).
+const DEFAULT_API_URL = "https://chuyende2-production.up.railway.app";
+
 const API_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") || "http://localhost:8000";
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") || DEFAULT_API_URL;
 
 /** Kiểu dữ liệu response từ endpoint /chat. */
 export interface ChatResponse {
